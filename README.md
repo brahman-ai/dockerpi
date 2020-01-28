@@ -4,12 +4,9 @@
 
 # dockerpi
 
-[![Actions Status](https://badgen.net/github/checks/brahmanai/dockerpi?icon=github&label=Build%20Status)](https://github.com/brahmanai/dockerpi/actions)
+[![Actions Status](https://badgen.net/github/checks/brahmanai/dockerpi?icon=github&label=Build%20Status)](https://github.com/brahman-ai/dockerpi/actions)
 [![Docker Pulls](https://badgen.net/docker/pulls/brahmanai/dockerpi?icon=docker&label=Docker%20pulls)](https://hub.docker.com/r/brahmanai/dockerpi/)
 [![Docker Image Size](https://badgen.net/docker/size/brahmanai/dockerpi/latest/amd64?icon=docker&label=brahmanai/dockerpi)](https://hub.docker.com/r/brahmanai/dockerpi/tags)
-[![GitHub Donate](https://badgen.net/badge/GitHub/Sponsor/D959A7?icon=github)](https://github.com/sponsors/brahmanai)
-[![Bitcoin Donate](https://badgen.net/badge/Bitcoin/Donate/F19537?icon=bitcoin)](https://blockstream.info/address/3Luke2qRn5iLj4NiFrvLBu2jaEj7JeMR6w)
-[![Lightning Donate](https://badgen.net/badge/Lightning/Donate/F6BC41?icon=bitcoin-lightning)](https://tippin.me/@brahmanai?refurl=github.com/brahmanai/dockerpi)
 
 > A Virtualised Raspberry Pi inside a Docker image
 
