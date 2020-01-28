@@ -4,7 +4,6 @@
 
 # dockerpi
 
-[![Actions Status](https://badgen.net/github/checks/brahmanai/dockerpi?icon=github&label=Build%20Status)](https://github.com/brahman-ai/dockerpi/actions)
 [![Docker Pulls](https://badgen.net/docker/pulls/brahmanai/dockerpi?icon=docker&label=Docker%20pulls)](https://hub.docker.com/r/brahmanai/dockerpi/)
 [![Docker Image Size](https://badgen.net/docker/size/brahmanai/dockerpi/latest/amd64?icon=docker&label=brahmanai/dockerpi)](https://hub.docker.com/r/brahmanai/dockerpi/tags)
 
@@ -44,6 +43,39 @@ If you only want to mount your own image, you can download a much slimmer VM onl
 ```
 docker run -it -v /2019-09-26-raspbian-buster-lite.img:/sdcard/filesystem.img brahmanai/dockerpi:vm
 ```
+
+### SSH into your virtualised Pi
+
+Before connecting to your Pi, you will need to know the IP assigned to the container executed with `docker run`:
+
+```
+$ docker ps --format '{{.Names}}' | while read line; do echo -e "$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $line)\t$line"; done
+
+172.17.0.2  strange_bassi
+```
+
+Now we can simply SSH into the outputed IP using the default pi user and password:
+
+```
+$ ssh pi@172.17.0.2
+pi@172.17.0.2's password:
+Linux raspberrypi 4.19.50+ #1 Tue Nov 26 01:49:16 CET 2019 armv6l
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Jan 28 01:45:42 2020 from 172.17.0.1
+
+SSH is enabled and the default password for the 'pi' user has not been changed.
+This is a security risk - please login as the 'pi' user and type 'passwd' to set a new password.
+
+pi@raspberrypi:~ $
+
+```
+
 
 ## Wait, what?
 
